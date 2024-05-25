@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Demo | gZoomMove.js</title>
+
+    <style>
+        body {
+            height: 100vh;
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .container {
+            border: 1px solid #000;
+            cursor: move;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .zoom-element {
+            width: 100%;
+            height: 100%;
+        }
+
+        .zoom-element img {
+            width: 100%;
+            height: auto;
+        }
+
+        .control a {
+            margin-left: 15px;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://github.com/Gibass/gZoomMove.js">gZoomMove.js</a>
+    <main>
+        <div class="container">
+            <div id="zoom" class="zoom-element">
+                <img src="https://picsum.photos/800/500" alt="picsum-photos">
+            </div>
+        </div>
+        <div class="control">
+            <a href="#" class="control-zoom-in">Zoom +</a>
+            <a href="#" class="control-zoom-out">Zoom -</a>
+            <a href="#" class="control-reset">Reset</a>
+        </div>
+    </main>
+    <script type="module">
+        import GZoomMove from "./gZoom-move.min.js";
+
+        window.onload = () => {
+            const zoom = new GZoomMove(document.querySelector('#zoom'), {
+                scale: {min: 1},
+                control: {
+                    zoomIn : document.querySelector('.control-zoom-in'),
+                    zoomOut : document.querySelector('.control-zoom-out'),
+                    reset : document.querySelector('.control-reset')
+                }
+            })
+        };
+
+    </script>
+</body>
+</html>
