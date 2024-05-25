@@ -2,7 +2,7 @@
   "name": "@gibass/gzoom-move",
   "version": "1.0.0",
   "description": "Zoom and Move a DOM element with javascript",
-  "main": "dist/gZoom-move.js",
+  "main": "gZoom-move.min.mjs",
   "scripts": {
     "dev": "NODE_ENV=dev webpack serve",
     "build": "NODE_ENV=dev webpack",

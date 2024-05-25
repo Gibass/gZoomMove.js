@@ -15,7 +15,7 @@ You can install the module via npm.
 ## Usage
 
 ```javascript
-import GZoomMove from @gibass/gzoom-move;
+import GZoomMove from '@gibass/gzoom-move';
 
 // Basic usage with default options
 new GZoomMove(document.querySelector('#zoom')
