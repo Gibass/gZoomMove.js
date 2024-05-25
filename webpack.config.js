@@ -16,7 +16,7 @@ let config = {
         },
         path: path.resolve(__dirname, './dist'),
         publicPath: '/',
-        filename: isDev ? '[name].js' : '[name].min.js',
+        filename: isDev ? '[name].mjs' : '[name].min.mjs',
         library: {
             type: 'module'
         },
