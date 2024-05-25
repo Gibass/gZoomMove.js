@@ -55,7 +55,7 @@ var defaultOptions = {
     min: MIN_SCALE,
     max: MAX_SCALE
   },
-  control: {
+  controls: {
     zoomIn: false,
     zoomOut: false,
     reset: false
@@ -155,13 +155,13 @@ var GZoomMove = /*#__PURE__*/function () {
     key: "controlEvent",
     value: function controlEvent() {
       var _this3 = this;
-      this.options.zoom && this.options.control.zoomIn && this.options.control.zoomIn.addEventListener('click', function (e) {
+      this.options.zoom && this.options.controls.zoomIn && this.options.controls.zoomIn.addEventListener('click', function (e) {
         return _this3.controlZoom(e, 0.5);
       });
-      this.options.zoom && this.options.control.zoomOut && this.options.control.zoomOut.addEventListener('click', function (e) {
+      this.options.zoom && this.options.controls.zoomOut && this.options.controls.zoomOut.addEventListener('click', function (e) {
         return _this3.controlZoom(e, -0.5);
       });
-      this.options.control.reset && this.options.control.reset.addEventListener('click', function (e) {
+      this.options.controls.reset && this.options.controls.reset.addEventListener('click', function (e) {
         e.preventDefault();
         _this3.reset();
       });

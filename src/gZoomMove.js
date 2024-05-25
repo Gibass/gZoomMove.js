@@ -3,7 +3,7 @@ const MAX_SCALE = 4
 
 const defaultOptions = {
     scale: { min: MIN_SCALE, max: MAX_SCALE},
-    control: { zoomIn: false, zoomOut: false, reset: false },
+    controls: { zoomIn: false, zoomOut: false, reset: false },
     zoom: true,
     move: true
 }
@@ -62,9 +62,9 @@ export default class GZoomMove {
     }
 
     controlEvent () {
-        this.options.zoom && this.options.control.zoomIn && this.options.control.zoomIn.addEventListener('click', (e) => this.controlZoom(e, 0.5))
-        this.options.zoom && this.options.control.zoomOut && this.options.control.zoomOut.addEventListener('click', (e) => this.controlZoom(e, -0.5))
-        this.options.control.reset && this.options.control.reset.addEventListener('click', (e) => { e.preventDefault(); this.reset() })
+        this.options.zoom && this.options.controls.zoomIn && this.options.controls.zoomIn.addEventListener('click', (e) => this.controlZoom(e, 0.5))
+        this.options.zoom && this.options.controls.zoomOut && this.options.controls.zoomOut.addEventListener('click', (e) => this.controlZoom(e, -0.5))
+        this.options.controls.reset && this.options.controls.reset.addEventListener('click', (e) => { e.preventDefault(); this.reset() })
     }
 
     handleWheel(e) {
