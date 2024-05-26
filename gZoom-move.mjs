@@ -216,6 +216,13 @@ var GZoomMove = /*#__PURE__*/function () {
     value: function handleTouchstart(e) {
       if (e.cancelable && (this.options.move || this.options.zoom)) e.preventDefault();
       if (this.options.move && e.touches.length === 1) {
+        /*this.drag = true;
+        this.start.x = this.state.x
+        this.start.y = this.state.y
+        this.deltaStart = { x: this.state.delta.x, y: this.state.delta.y }
+        this.tempCoord = { x: e.changedTouches[0].clientX, y: e.changedTouches[0].clientY }*/
+      }
+      if (this.options.zoom && e.touches.length === 2) {
         this.drag = true;
         this.start.x = this.state.x;
         this.start.y = this.state.y;
@@ -227,8 +234,6 @@ var GZoomMove = /*#__PURE__*/function () {
           x: e.changedTouches[0].clientX,
           y: e.changedTouches[0].clientY
         };
-      }
-      if (this.options.zoom && e.touches.length === 2) {
         this.start.scale = this.state.scale;
         this.start.distance = this.distance(e);
         this.start.middle.x = (e.touches[0].clientX - this.elt.offsetLeft + e.touches[1].clientX - 2 * this.elt.offsetLeft) / 2;
@@ -240,13 +245,14 @@ var GZoomMove = /*#__PURE__*/function () {
     value: function handleTouchMove(e) {
       if (e.cancelable && (this.options.move || this.options.zoom)) e.preventDefault();
       if (this.options.move && this.drag && e.touches.length === 1) {
+
+        //this.render()
+      }
+      if (this.options.zoom && e.touches.length === 2) {
         this.state.x = this.start.x + (e.changedTouches[0].clientX - this.tempCoord.x);
         this.state.y = this.start.y + (e.changedTouches[0].clientY - this.tempCoord.y);
         this.state.delta.x = this.deltaStart.x - (e.changedTouches[0].clientX - this.tempCoord.x);
         this.state.delta.y = this.deltaStart.y - (e.changedTouches[0].clientY - this.tempCoord.y);
-        this.render();
-      }
-      if (this.options.zoom && e.touches.length === 2) {
         var deltaDistance = this.distance(e);
         var scale = deltaDistance / this.start.distance;
         this.state.scale = this.start.scale * Math.min(Math.max(0.12, scale), 4);

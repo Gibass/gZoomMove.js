@@ -106,8 +106,6 @@ export default class GZoomMove {
     }
 
     handleTouchstart(e) {
-        if (e.cancelable && (this.options.move || this.options.zoom)) e.preventDefault();
-
         if (this.options.move && e.touches.length === 1) {
             this.drag = true;
             this.start.x = this.state.x
