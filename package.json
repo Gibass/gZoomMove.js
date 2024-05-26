@@ -1,6 +1,6 @@
 {
   "name": "@gibass/gzoom-move",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Zoom and Move a DOM element with javascript",
   "main": "gZoom-move.min.mjs",
   "scripts": {
