@@ -9,9 +9,10 @@
 
     <style>
         body {
-            height: 100%;
+            height: 100vh;
             padding: 0;
             margin: 0;
+            overflow: hidden;
         }
 
         main {
@@ -59,66 +60,6 @@
             <a href="#" class="control-reset">Reset</a>
         </div>
     </main>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
-    peeaf <br>
     <script type="module">
         import GZoomMove from "./gZoom-move.mjs";
 
@@ -126,6 +67,9 @@
             const zoom = new GZoomMove(document.querySelector('#zoom'), {
                 scale: {min: 1},
                 controls: {
+                    zoomIn : document.querySelector('.control-zoom-in'),
+                    zoomOut : document.querySelector('.control-zoom-out'),
+                    reset : document.querySelector('.control-reset')
                 }
             })
         };

@@ -14,7 +14,8 @@ let config = {
         environment: {
             module: true
         },
-        path: path.resolve(__dirname, '.'),
+        path: isDev ? path.resolve(__dirname, './docs') : path.resolve(__dirname, '.'),
+        publicPath: '/',
         filename: isDev ? '[name].mjs' : '[name].min.mjs',
         library: {
             type: 'module'
@@ -36,7 +37,7 @@ let config = {
         ]
     },
     devServer: {
-        static: path.resolve(__dirname, '.'),
+        static: path.resolve(__dirname, './docs'),
         watchFiles: ['src/*.js'],
     }
 }
