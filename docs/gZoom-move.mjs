@@ -256,7 +256,6 @@ var GZoomMove = /*#__PURE__*/function () {
   }, {
     key: "handleTouchEnd",
     value: function handleTouchEnd(e) {
-      if (e.cancelable && (this.options.move || this.options.zoom)) e.preventDefault();
       if (e.touches.length === 1) {
         this.drag = false;
         this.tempCoord = {
